@@ -201,7 +201,7 @@ export default function Home() {
             </div>
             <div style={{ flexShrink: 0, width: 'calc(100% - 2rem)', maxWidth: '560px', aspectRatio: '16/9', scrollSnapAlign: 'start' }}>
               <iframe
-                src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId3%2F&show_text=false&width=560"
+                src="https://www.facebook.com/share/v/1CMG7Cdz7A/&show_text=false&width=560"
                 width="100%"
                 height="100%"
                 style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
