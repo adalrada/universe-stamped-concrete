@@ -21,7 +21,7 @@ export default function Home() {
       videosTitle: 'Our Videos',
       area: 'Service Area',
       contact: 'Contact Us',
-      areaList: 'Pennsylvania · New York · New Jersey',
+      areaList: 'New York · Pennsylvania · New Jersey', // Orden cambiado
       whatsapp: 'Message us on WhatsApp',
       facebook: 'Visit our Facebook Page',
       description: 'We are fully insured, highly experienced, and proudly recognized as one of the best in the industry. We offer our services in English and Spanish.',
@@ -51,7 +51,7 @@ export default function Home() {
       videosTitle: 'Nuestros Videos',
       area: 'Área de Cobertura',
       contact: 'Contáctenos',
-      areaList: 'Pensilvania · Nueva York · Nueva Jersey',
+      areaList: 'Nueva York · Pensilvania · Nueva Jersey', // Orden cambiado
       whatsapp: 'Envíanos un mensaje por WhatsApp',
       facebook: 'Visita nuestra página de Facebook',
       description: 'Totalmente asegurados, altamente experimentados y orgullosamente reconocidos como una de las mejores empresas del sector. Ofrecemos nuestros servicios en inglés y español.',
@@ -81,7 +81,7 @@ export default function Home() {
         <title>{text.title}</title>
         <meta name='description' content={text.description} />
         <meta name='keywords' content={text.keywords} />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' /> {/* Asegura la responsividad */}
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta property='og:title' content={text.title} />
         <meta property='og:description' content={text.description} />
         <meta property='og:image' content='/logo.png' />
@@ -104,13 +104,13 @@ export default function Home() {
         boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
         boxSizing: 'border-box',
       }}>
-        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} /> {/* Logo adaptable y más visible */}
-        <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}> {/* Espaciado reducido */}
-          <a href='#services' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.servicesTitle}</a> {/* Letra más legible */}
-          <a href='#gallery' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.galleryTitle}</a> {/* Letra más legible */}
-          <a href='#videos' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.videosTitle}</a> {/* Letra más legible */}
-          <a href='#area' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.area}</a> {/* Letra más legible */}
-          <a href='#contact' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1.0rem' }}>{text.contact}</a> {/* Letra más legible */}
+        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} />
+        <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}>
+          <a href='#services' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.servicesTitle}</a>
+          <a href='#gallery' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.galleryTitle}</a>
+          <a href='#videos' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.videosTitle}</a>
+          <a href='#area' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.area}</a>
+          <a href='#contact' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1.0rem' }}>{text.contact}</a>
           <button
             onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
             style={{
@@ -131,13 +131,13 @@ export default function Home() {
       </header>
 
       {/* El padding-top se ajusta a la altura del header sticky */}
-      <main style={{ ...mainContainerStyle, paddingTop: '120px' /* Ajusta según la altura real de tu header en móvil */ }}>
+      <main style={{ ...mainContainerStyle, paddingTop: '120px' }}>
         <h1 style={{ textAlign: 'center', fontSize: '2.2rem', color: '#333', marginBottom: '1rem', padding: '0 0.5rem' }}>{text.subtitle}</h1>
         <p style={{ textAlign: 'center', fontSize: '1rem', color: '#666', maxWidth: '900px', margin: '1rem auto 3rem auto', padding: '0 0.5rem' }}>{text.description}</p>
 
         <section id='services' style={{ margin: '3rem 0' }}>
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem', textAlign: 'center' }}>{text.servicesTitle}</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', padding: '0 0.5rem' }}> {/* minmax ajustado */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', padding: '0 0.5rem' }}>
             {text.services.map((service, i) => (
               <div key={i} style={{ background: '#f9f9f9', padding: '1.2rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', transition: 'transform 0.3s ease' }}
                    onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
@@ -153,22 +153,20 @@ export default function Home() {
         <section id='gallery' style={{ margin: '3rem 0' }}>
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem', textAlign: 'center' }}>{text.galleryTitle}</h2>
           <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-            {/* Un carrusel real de React necesitaría una librería (ej. react-slick) y CSS adicional.
-                Esto es un scroll horizontal mejorado, que simula un carrusel simple. */}
             {[...Array(9).keys()].map(i => (
               <img
                 key={i}
                 src={`/gallery${i+1}.jpg`}
                 alt={`${text.galleryTitle} ${i+1}`}
                 style={{
-                  height: 200, // Altura ajustada para móviles
+                  height: 200,
                   width: 'auto',
                   flexShrink: 0,
                   borderRadius: '10px',
                   boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
                   objectFit: 'cover',
                   scrollSnapAlign: 'start',
-                  maxWidth: 'calc(100% - 2rem)', // Ajuste para que una imagen ocupe casi todo el ancho
+                  maxWidth: 'calc(100% - 2rem)',
                 }}
               />
             ))}
@@ -179,7 +177,6 @@ export default function Home() {
         <section id='videos' style={{ margin: '3rem 0' }}>
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem', textAlign: 'center' }}>{text.videosTitle}</h2>
           <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-            {/* Recordatorio: Reemplaza 'src' con el código de inserción real de Facebook */}
             <div style={{ flexShrink: 0, width: 'calc(100% - 2rem)', maxWidth: '560px', aspectRatio: '16/9', scrollSnapAlign: 'start' }}>
               <iframe
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId1%2F&show_text=false&width=560"
@@ -221,17 +218,18 @@ export default function Home() {
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem' }}>{text.area}</h2>
           <p style={{ fontSize: '1.1rem', color: '#555', marginBottom: '1.5rem' }}>{text.areaList}</p>
 
-          {/* Mapa de Google Maps mostrando PA, NY, NJ */}
-          <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', height: '300px', borderRadius: '10px', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}> {/* Altura ajustada para móvil */}
+          {/* Mapa de Google Maps mostrando PA, NY, NJ centrado en Middletown NY */}
+          <div style={{ width: '100%', maxWidth: '800px', margin: '0 auto', height: '300px', borderRadius: '10px', overflow: 'hidden', boxShadow: '0 4px 10px rgba(0,0,0,0.2)' }}>
+            {/* El 'q' parameter busca la ubicación, y 'z' es el nivel de zoom (8-9 para aprox. 75 millas) */}
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d782161.0853509121!2d-76.81882414849615!3d41.0116848149811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c243c21a4f0015%3A0x6b4ac0d436a64483!2sPennsylvania%2C%20USA!5e0!3m2!1sen!2sca!4v1716942000000!5m2!1sen!2sca"
+              src="https://maps.google.com/maps?q=Middletown,+New+York,+USA&z=8&t=&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Service Area Map - Pennsylvania, New York, New Jersey"
+              title="Service Area Map - Middletown, New York & Surrounding 75 Miles"
             ></iframe>
           </div>
         </section>
@@ -239,7 +237,7 @@ export default function Home() {
         {/* Sección de Contacto con Formulario */}
         <section id='contact' style={{ margin: '3rem 0' }}>
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem', textAlign: 'center' }}>{text.contact}</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', padding: '0 0.5rem' }}> {/* minmax ajustado */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', padding: '0 0.5rem' }}>
             {/* Información de contacto y botones */}
             <div style={{ background: '#f9f9f9', padding: '1.5rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.5rem', color: '#007BFF', marginBottom: '1rem' }}>{text.contactFormTitle}</h3>
@@ -249,7 +247,7 @@ export default function Home() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {/* Botón de WhatsApp */}
                 <a
-                  href='https://wa.me/18544218352'
+                  href='https://wa.me/18454218352' // Número de teléfono actualizado
                   target='_blank'
                   rel='noopener noreferrer'
                   style={{
@@ -303,9 +301,6 @@ export default function Home() {
             {/* Formulario de Contacto (usando Formspree para envío de email) */}
             <div style={{ background: '#f9f9f9', padding: '1.5rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.5rem', color: '#007BFF', marginBottom: '1rem' }}>{text.contactFormTitle}</h3>
-              {/* IMPORTANTE: Reemplaza "YOUR_FORMSPREE_FORM_ID" con tu ID real de Formspree.
-                  Necesitarás crear una cuenta en formspree.io y crear un nuevo formulario para obtener tu ID.
-                  El envío de emails directamente desde el frontend no es seguro ni posible sin un backend o servicio como Formspree. */}
               <form action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                 <input
                   type="text"
@@ -331,7 +326,7 @@ export default function Home() {
                   name="message"
                   placeholder={text.formMessage}
                   required
-                  rows="4" // Filas ajustadas para móvil
+                  rows="4"
                   style={formInputStyle}
                 ></textarea>
                 <button
@@ -365,7 +360,6 @@ export default function Home() {
   );
 }
 
-// Estilos comunes para los inputs del formulario (para evitar repetición)
 const formInputStyle = {
   padding: '0.6rem',
   border: '1px solid #ddd',
