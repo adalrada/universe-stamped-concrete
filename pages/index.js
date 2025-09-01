@@ -3,6 +3,8 @@ import { useState } from 'react';
 
 export default function Home() {
   const [lang, setLang] = useState('en');
+  const [status, setStatus] = useState('');
+
   const t = {
     en: {
       title: 'Stamped Concrete Contractor in NY, PA & NJ | Universe Stamped Concrete',
@@ -75,6 +77,30 @@ export default function Home() {
     padding: '0 1rem',
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("enviando");
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const response = await fetch("https://formspree.io/f/xpwjlyrl", {
+        method: "POST",
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', margin: 0, padding: 0, boxSizing: 'border-box' }}>
       <Head>
@@ -84,7 +110,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-s/cale=1.0' />
         <meta property='og:title' content={text.title} />
         <meta property='og:description' content={text.description} />
-        <meta property='og:image' content='/logo.png' /> {/* Revertido a tu logo original para OG */}
+        <meta property='og:image' content='/logo.png' />
         <meta property='og:url' content='https://www.universestampedconcrete.com' />
         <meta property='og:type' content='website' />
         <link rel='canonical' href='https://www.universestampedconcrete.com/' />
@@ -105,7 +131,7 @@ export default function Home() {
         boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
         boxSizing: 'border-box',
       }}>
-        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} /> {/* Revertido a tu logo original para el menú */}
+        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} />
         <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}>
           <a href='#services' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.servicesTitle}</a>
           <a href='#gallery' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.galleryTitle}</a>
@@ -182,7 +208,7 @@ export default function Home() {
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId1%2F&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 1 - Universe Stamped Concrete"
@@ -193,7 +219,7 @@ export default function Home() {
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId2%2F&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 2 - Universe Stamped Concrete"
@@ -204,7 +230,7 @@ export default function Home() {
                 src="https://www.facebook.com/share/v/1CMG7Cdz7A/&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 3 - Universe Stamped Concrete"
@@ -242,9 +268,8 @@ export default function Home() {
             {/* Información de contacto y botones */}
             <div style={{ background: '#f9f9f9', padding: '1.5rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.5rem', color: '#007BFF', marginBottom: '1rem' }}>{text.contactFormTitle}</h3>
-              <p style={{ fontSize: '1rem', color: '#555', marginBottom: '1rem' }}>
-                {text.formSuccess}
-              </p>
+              {status === "success" && <p style={{ color: "green", fontWeight: "bold" }}>{text.formSuccess}</p>}
+              {status === "error" && <p style={{ color: "red", fontWeight: "bold" }}>Hubo un error al enviar el mensaje.</p>}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {/* Botón de WhatsApp */}
                 <a
@@ -302,7 +327,7 @@ export default function Home() {
             {/* Formulario de Contacto (usando Formspree para envío de email) */}
             <div style={{ background: '#f9f9f9', padding: '1.5rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.5rem', color: '#007BFF', marginBottom: '1rem' }}>{text.contactFormTitle}</h3>
-              <form action="https://formspree.io/f/xpwjlyrl" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                 <input
                   type="text"
                   name="name"
@@ -332,6 +357,7 @@ export default function Home() {
                 ></textarea>
                 <button
                   type="submit"
+                  disabled={status === "enviando"}
                   style={{
                     padding: '0.8rem 1.5rem',
                     backgroundColor: '#007BFF',
@@ -346,7 +372,7 @@ export default function Home() {
                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#0056b3'}
                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#007BFF'}
                 >
-                  {text.formSubmit}
+                  {status === "enviando" ? "Enviando..." : text.formSubmit}
                 </button>
               </form>
             </div>
