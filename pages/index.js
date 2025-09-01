@@ -5,7 +5,7 @@ export default function Home() {
   const [lang, setLang] = useState('en');
   const t = {
     en: {
-      title: 'Universe Stamped Concrete',
+      title: 'Stamped Concrete Contractor in NY, PA & NJ | Universe Stamped Concrete',
       subtitle: 'Transforming spaces with expert craftsmanship!',
       servicesTitle: 'Our Services',
       services: [
@@ -21,10 +21,10 @@ export default function Home() {
       videosTitle: 'Our Videos',
       area: 'Service Area',
       contact: 'Contact Us',
-      areaList: 'New York · Pennsylvania · New Jersey', // Orden cambiado
+      areaList: 'New York · Pennsylvania · New Jersey',
       whatsapp: 'Message us on WhatsApp',
       facebook: 'Visit our Facebook Page',
-      description: 'We are fully insured, highly experienced, and proudly recognized as one of the best in the industry. We offer our services in English and Spanish.',
+      description: 'Expert stamped concrete and construction services in New York, Pennsylvania, and New Jersey. We specialize in driveways, patios, sidewalks, and floor restorations.',
       keywords: 'stamped concrete, concrete services, patios, driveways, sidewalks, overlays, slabs, stucco, floor restorations, Pennsylvania, New York, New Jersey, concrete contractor, construction',
       contactFormTitle: 'Send us a Message',
       formName: 'Your Name',
@@ -35,7 +35,7 @@ export default function Home() {
       formSuccess: 'Thank you for your message! We will get back to you soon.',
     },
     es: {
-      title: 'Universe Stamped Concrete',
+      title: 'Contratista de Concreto Estampado en NY, PA & NJ | Universe Stamped Concrete',
       subtitle: '¡Transformando espacios con artesanía experta!',
       servicesTitle: 'Nuestros Servicios',
       services: [
@@ -51,10 +51,10 @@ export default function Home() {
       videosTitle: 'Nuestros Videos',
       area: 'Área de Cobertura',
       contact: 'Contáctenos',
-      areaList: 'Nueva York · Pensilvania · Nueva Jersey', // Orden cambiado
+      areaList: 'Nueva York · Pensilvania · Nueva Jersey',
       whatsapp: 'Envíanos un mensaje por WhatsApp',
       facebook: 'Visita nuestra página de Facebook',
-      description: 'Totalmente asegurados, altamente experimentados y orgullosamente reconocidos como una de las mejores empresas del sector. Ofrecemos nuestros servicios en inglés y español.',
+      description: 'Servicios expertos de concreto estampado y construcción en Nueva York, Pensilvania y Nueva Jersey. Nos especializamos en entradas, patios, aceras y restauración de pisos.',
       keywords: 'concreto estampado, servicios de concreto, patios, entradas, aceras, revestimientos, losas, estuco, restauración de pisos, Pensilvania, Nueva York, Nueva Jersey, contratista de concreto, construcción',
       contactFormTitle: 'Envíanos un Mensaje',
       formName: 'Tu Nombre',
@@ -70,9 +70,9 @@ export default function Home() {
 
   // Estilos de base para el contenedor principal para centrar y limitar el ancho en pantallas grandes
   const mainContainerStyle = {
-    maxWidth: '1200px', // Limita el ancho máximo del contenido
-    margin: '0 auto',   // Centra el contenido
-    padding: '0 1rem',  // Padding horizontal reducido para móviles
+    maxWidth: '1200px',
+    margin: '0 auto',
+    padding: '0 1rem',
   };
 
   return (
@@ -81,22 +81,23 @@ export default function Home() {
         <title>{text.title}</title>
         <meta name='description' content={text.description} />
         <meta name='keywords' content={text.keywords} />
-        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <meta name='viewport' content='width=device-width, initial-s/cale=1.0' />
         <meta property='og:title' content={text.title} />
         <meta property='og:description' content={text.description} />
-        <meta property='og:image' content='/logo.png' />
+        <meta property='og:image' content='/logoUSC.png' />
         <meta property='og:url' content='https://www.universestampedconcrete.com' />
         <meta property='og:type' content='website' />
+        <link rel='canonical' href='https://www.universestampedconcrete.com/' />
       </Head>
 
       {/* Menú Fijo (Sticky) */}
       <header style={{
         display: 'flex',
-        flexDirection: 'column', // Los elementos se apilan en pantallas pequeñas por defecto
+        flexDirection: 'column',
         alignItems: 'center',
         background: '#222',
         color: '#fff',
-        padding: '1rem 0.5rem', // Padding reducido para móviles
+        padding: '1rem 0.5rem',
         position: 'sticky',
         top: 0,
         width: '100%',
@@ -104,11 +105,10 @@ export default function Home() {
         boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
         boxSizing: 'border-box',
       }}>
-        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} />
+        <img src='/logoUSC.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} />
         <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}>
           <a href='#services' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.servicesTitle}</a>
           <a href='#gallery' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.galleryTitle}</a>
-          <a href='#videos' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.videosTitle}</a>
           <a href='#area' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.area}</a>
           <a href='#contact' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1.0rem' }}>{text.contact}</a>
           <button
@@ -140,8 +140,8 @@ export default function Home() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', padding: '0 0.5rem' }}>
             {text.services.map((service, i) => (
               <div key={i} style={{ background: '#f9f9f9', padding: '1.2rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)', transition: 'transform 0.3s ease' }}
-                   onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                   onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
                 <h3 style={{ fontSize: '1.3rem', color: '#007BFF', marginBottom: '0.6rem' }}>{service.name}</h3>
                 <p style={{ fontSize: '0.9rem', color: '#444' }}>{service.description}</p>
               </div>
@@ -173,7 +173,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Nueva Sección de Videos */}
+        {/* Sección de Videos comentada para su uso futuro
         <section id='videos' style={{ margin: '3rem 0' }}>
           <h2 style={{ fontSize: '1.8rem', color: '#333', marginBottom: '1.5rem', borderBottom: '2px solid #ddd', paddingBottom: '0.5rem', textAlign: 'center' }}>{text.videosTitle}</h2>
           <div style={{ display: 'flex', overflowX: 'auto', gap: '1rem', paddingBottom: '1rem', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
@@ -212,6 +212,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        */}
 
         {/* Sección de Área de Cobertura con Mapa */}
         <section id='area' style={{ margin: '3rem 0', textAlign: 'center' }}>
@@ -301,7 +302,7 @@ export default function Home() {
             {/* Formulario de Contacto (usando Formspree para envío de email) */}
             <div style={{ background: '#f9f9f9', padding: '1.5rem', borderRadius: '10px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }}>
               <h3 style={{ fontSize: '1.5rem', color: '#007BFF', marginBottom: '1rem' }}>{text.contactFormTitle}</h3>
-              <form action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+              <form action="https://formspree.io/f/xpwjlyrl" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
                 <input
                   type="text"
                   name="name"
