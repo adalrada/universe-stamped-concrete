@@ -84,7 +84,7 @@ export default function Home() {
         <meta name='viewport' content='width=device-width, initial-s/cale=1.0' />
         <meta property='og:title' content={text.title} />
         <meta property='og:description' content={text.description} />
-        <meta property='og:image' content='/logoUSC.png' />
+        <meta property='og:image' content='/logo.png' /> {/* Revertido a tu logo original para OG */}
         <meta property='og:url' content='https://www.universestampedconcrete.com' />
         <meta property='og:type' content='website' />
         <link rel='canonical' href='https://www.universestampedconcrete.com/' />
@@ -105,7 +105,7 @@ export default function Home() {
         boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
         boxSizing: 'border-box',
       }}>
-        <img src='/logoUSC.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} />
+        <img src='/logo.png' alt='logo Universe Stamped Concrete' style={{ height: 'auto', maxWidth: '100px', marginBottom: '10px' }} /> {/* Revertido a tu logo original para el menú */}
         <nav style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.5rem' }}>
           <a href='#services' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.servicesTitle}</a>
           <a href='#gallery' style={{ margin: '0 0.3rem', color: '#fff', textDecoration: 'none', fontSize: '1rem' }}>{text.galleryTitle}</a>
@@ -182,7 +182,7 @@ export default function Home() {
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId1%2F&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 1 - Universe Stamped Concrete"
@@ -193,7 +193,7 @@ export default function Home() {
                 src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FSuPagina%2Fvideos%2FSuVideoId2%2F&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 2 - Universe Stamped Concrete"
@@ -204,7 +204,7 @@ export default function Home() {
                 src="https://www.facebook.com/share/v/1CMG7Cdz7A/&show_text=false&width=560"
                 width="100%"
                 height="100%"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}
+                style={{ border: 'none', overflow: 'hidden', borderRadius: '10px', boxShadow: '0 4-8px rgba(0,0,0,0.2)' }}
                 allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                 title="Video de Facebook 3 - Universe Stamped Concrete"
